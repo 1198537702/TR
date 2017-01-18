@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test-page</title>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+</head>
+<body>
+<h1>hello</h1>
+    <ul>
+        {% for foo in InfoList %}
+            <h3>{{ foo.testInfo }}</h3>
+        {% endfor %}
+
+    </ul>
+
+</body>
+</html>
