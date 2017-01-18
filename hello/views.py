@@ -6,6 +6,5 @@ from .models import TestTable
 
 def hello(request):
     infoList = TestTable.objects.all()
-    print(type(request))
     context = {'testInfo': infoList}
     return render(request, 'hello/testpage.html', context)
