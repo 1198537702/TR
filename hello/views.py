@@ -11,6 +11,7 @@ def hello(request):
     context = {'InfoList': infoList}
     return render(request, 'hello/testpage.html', context)
 
+
 class TestTableViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
