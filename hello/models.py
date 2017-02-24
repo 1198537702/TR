@@ -6,3 +6,4 @@ from django.db import models
 class TestTable(models.Model):
     testInfo = models.CharField(max_length=20)
     id = models.IntegerField(primary_key=True)
+    image = models.ImageField(upload_to='image/', blank=True)

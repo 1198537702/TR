@@ -107,6 +107,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+}
 
 
 # Internationalization
@@ -127,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static').replace('\\', '/')
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'staticFiles').replace('\\', '/')
+MEDIA_URL = '/staticFiles/'

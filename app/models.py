@@ -45,7 +45,7 @@ class Order(models.Model):
     vehicleType = models.CharField(max_length=30)
     pay = models.IntegerField()
     driverId = models.IntegerField()
-    userId = models.IntegerField()
+    userId = models.CharField(max_length=11, primary_key=True)
     evaluation = models.CharField(max_length=300)
     mark = models.IntegerField()
     orderTime = models.TimeField()

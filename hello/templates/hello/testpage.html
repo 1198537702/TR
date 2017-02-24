@@ -13,9 +13,15 @@
     <ul>
         {% for foo in InfoList %}
             <h3>{{ foo.testInfo }}</h3>
+            <img src='{% staticFiles foo.image  %}  ' />
         {% endfor %}
 
     </ul>
+    <form action="{% url 'hello:test' %} " method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit" />
 
+    </form>
 </body>
 </html>
