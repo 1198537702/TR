@@ -423,68 +423,67 @@ model</columns>
       <columns>id</columns>
       <primary>1</primary>
     </key>
-    <column id="119" parent="28" name="id">
+    <column id="119" parent="28" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="120" parent="28" name="tell">
+      <mandatory>1</mandatory>
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="121" parent="28" name="drivingLicence">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="122" parent="28" name="carImage">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="123" parent="28" name="certificateOfIdentificationImage">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="124" parent="28" name="headPortrait">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="125" parent="28" name="points">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="126" parent="28" name="mark">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="127" parent="28" name="vehicleType">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="128" parent="28" name="orderNum">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="129" parent="28" name="msg">
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="130" parent="28" name="driversLicence">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="131" parent="29" name="id">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
       <sequence-identity>1</sequence-identity>
     </column>
-    <column id="120" parent="28" name="name">
-      <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
-    </column>
-    <column id="121" parent="28" name="tell">
-      <mandatory>1</mandatory>
-      <data-type>varchar(11)|0</data-type>
-    </column>
-    <column id="122" parent="28" name="drivingLicence">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="123" parent="28" name="carImage">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="124" parent="28" name="certificateOfIdentificationImage">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="125" parent="28" name="headPortrait">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <column id="126" parent="28" name="points">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="127" parent="28" name="mark">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="128" parent="28" name="vehicleType">
-      <mandatory>1</mandatory>
-      <data-type>varchar(30)|0</data-type>
-    </column>
-    <column id="129" parent="28" name="orderNum">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
-    </column>
-    <column id="130" parent="28" name="msg">
-      <mandatory>1</mandatory>
-      <data-type>longtext|0</data-type>
-    </column>
-    <column id="131" parent="28" name="driversLicence">
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
-    </column>
-    <key id="132" parent="28" name="PRIMARY">
-      <columns>id</columns>
-      <primary>1</primary>
-    </key>
-    <column id="133" parent="29" name="transportTime">
-      <mandatory>1</mandatory>
+    <column id="132" parent="29" name="transportTime">
       <data-type>time(6)|0</data-type>
     </column>
-    <column id="134" parent="29" name="startingPoint">
+    <column id="133" parent="29" name="start">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="134" parent="29" name="startDetail">
       <mandatory>1</mandatory>
       <data-type>varchar(100)|0</data-type>
     </column>
@@ -492,113 +491,117 @@ model</columns>
       <mandatory>1</mandatory>
       <data-type>varchar(100)|0</data-type>
     </column>
-    <column id="136" parent="29" name="orderStatus">
+    <column id="136" parent="29" name="endDetail">
       <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="137" parent="29" name="anZhuang">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="138" parent="29" name="huiDan">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="139" parent="29" name="banYun">
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="140" parent="29" name="payment">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="141" parent="29" name="orderStatus">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="137" parent="29" name="additionalDemand">
-      <mandatory>1</mandatory>
+    <column id="142" parent="29" name="additionalDemand">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="138" parent="29" name="remarks">
-      <mandatory>1</mandatory>
+    <column id="143" parent="29" name="remarks">
       <data-type>varchar(300)|0</data-type>
     </column>
-    <column id="139" parent="29" name="vehicleType">
+    <column id="144" parent="29" name="vehicleType">
       <mandatory>1</mandatory>
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="140" parent="29" name="pay">
+    <column id="145" parent="29" name="pay">
       <mandatory>1</mandatory>
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="141" parent="29" name="driverId">
-      <mandatory>1</mandatory>
-      <data-type>int(11)|0</data-type>
+    <column id="146" parent="29" name="driverId">
+      <data-type>varchar(11)|0</data-type>
     </column>
-    <column id="142" parent="29" name="userId">
+    <column id="147" parent="29" name="userId">
       <mandatory>1</mandatory>
       <data-type>varchar(11)|0</data-type>
     </column>
-    <column id="143" parent="29" name="evaluation">
-      <mandatory>1</mandatory>
+    <column id="148" parent="29" name="evaluation">
       <data-type>varchar(300)|0</data-type>
     </column>
-    <column id="144" parent="29" name="mark">
-      <mandatory>1</mandatory>
+    <column id="149" parent="29" name="mark">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="145" parent="29" name="orderTime">
-      <mandatory>1</mandatory>
+    <column id="150" parent="29" name="orderTime">
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="151" parent="29" name="recevingTime">
       <data-type>time(6)|0</data-type>
     </column>
-    <column id="146" parent="29" name="recevingTime">
-      <mandatory>1</mandatory>
+    <column id="152" parent="29" name="finishTime">
       <data-type>time(6)|0</data-type>
     </column>
-    <column id="147" parent="29" name="finishTime">
-      <mandatory>1</mandatory>
-      <data-type>time(6)|0</data-type>
-    </column>
-    <index id="148" parent="29" name="app_order_userId_4e2d326b_uniq">
-      <columns>userId</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
-    </index>
-    <key id="149" parent="29" name="PRIMARY">
-      <columns>userId</columns>
-      <primary>1</primary>
-    </key>
-    <key id="150" parent="29" name="app_order_userId_4e2d326b_uniq">
-      <columns>userId</columns>
-      <underlying-index>app_order_userId_4e2d326b_uniq</underlying-index>
-    </key>
-    <column id="151" parent="30" name="tell">
+    <column id="153" parent="29" name="contactsName">
       <mandatory>1</mandatory>
       <data-type>varchar(11)|0</data-type>
     </column>
-    <column id="152" parent="30" name="name">
+    <column id="154" parent="29" name="contactsTell">
       <mandatory>1</mandatory>
-      <data-type>varchar(255)|0</data-type>
+      <data-type>varchar(11)|0</data-type>
     </column>
-    <column id="153" parent="30" name="myDriver">
+    <key id="155" parent="29" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="156" parent="30" name="tell">
       <mandatory>1</mandatory>
+      <data-type>varchar(11)|0</data-type>
+    </column>
+    <column id="157" parent="30" name="myDriver">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="154" parent="30" name="points">
-      <mandatory>1</mandatory>
+    <column id="158" parent="30" name="points">
       <data-type>int(11)|0</data-type>
     </column>
-    <index id="155" parent="30" name="app_user_tell_8258d183_uniq">
+    <column id="159" parent="30" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(16)|0</data-type>
+    </column>
+    <index id="160" parent="30" name="app_user_tell_8258d183_uniq">
       <columns>tell</columns>
       <desc-columns></desc-columns>
       <unique>1</unique>
     </index>
-    <key id="156" parent="30" name="PRIMARY">
+    <key id="161" parent="30" name="PRIMARY">
       <columns>tell</columns>
       <primary>1</primary>
     </key>
-    <key id="157" parent="30" name="app_user_tell_8258d183_uniq">
+    <key id="162" parent="30" name="app_user_tell_8258d183_uniq">
       <columns>tell</columns>
       <underlying-index>app_user_tell_8258d183_uniq</underlying-index>
     </key>
-    <column id="158" parent="31" name="tell">
+    <column id="163" parent="31" name="tell">
       <mandatory>1</mandatory>
       <data-type>varchar(11)|0</data-type>
     </column>
-    <column id="159" parent="31" name="content">
+    <column id="164" parent="31" name="content">
       <mandatory>1</mandatory>
       <data-type>longtext|0</data-type>
     </column>
-    <column id="160" parent="31" name="msgTime">
+    <column id="165" parent="31" name="msgTime">
       <mandatory>1</mandatory>
       <data-type>date|0</data-type>
     </column>
-    <column id="161" parent="31" name="msgFrom">
+    <column id="166" parent="31" name="msgFrom">
       <mandatory>1</mandatory>
       <data-type>varchar(20)|0</data-type>
     </column>
-    <key id="162" parent="31" name="PRIMARY">
+    <key id="167" parent="31" name="PRIMARY">
       <columns>tell</columns>
       <primary>1</primary>
     </key>

@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/dev/howto/deployment/checklist/
 
@@ -25,8 +24,7 @@ SECRET_KEY = '1l#w#ar@$l&3t14*1qnblczg0wa*bl%fzf!t3rh0e59v**j1pd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -38,15 +36,21 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'hello',
     'app',
 ]
+CORS_ORIGIN_ALLOW_ALL = True
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -73,7 +77,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'TruckRental.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/dev/ref/settings/#databases
 
@@ -87,7 +90,6 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/dev/ref/settings/#auth-password-validators
@@ -111,7 +113,6 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/dev/topics/i18n/
 
@@ -125,12 +126,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static').replace('\\', '/')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticFiles').replace('\\', '/')
 MEDIA_URL = '/staticFiles/'
