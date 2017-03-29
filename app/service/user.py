@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from ..models import User, Order, Driver
 from django.core.exceptions import ObjectDoesNotExist
 from django.forms.models import model_to_dict
@@ -55,7 +57,9 @@ class userServiec:
     def newOrder(request):
         form = modelform_factory(Order, fields='__all__')
         o = form(request.POST)
-        o.save()
+        print(o.is_valid())
+        print(o.errors)
+        model = o.save()
         return JsonResponse({'msg': 'success'})
 
     @staticmethod

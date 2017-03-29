@@ -23,7 +23,6 @@ class Driver(models.Model):
     name = models.CharField(max_length=255)
     tell = models.CharField(max_length=11, primary_key=True)
     drivingLicence = models.ImageField(upload_to='driver/', blank=True, null=True)  # 添加上传路径？
-    carImage = models.ImageField(upload_to='driver/', blank=True, null=True)
     certificateOfIdentificationImage = models.ImageField(blank=True, null=True)
     headPortrait = models.ImageField(upload_to='driver/', blank=True, null=True)
     points = models.IntegerField(blank=True, null=True)
@@ -33,11 +32,12 @@ class Driver(models.Model):
     msg = models.TextField(blank=True, null=True)
     driversLicence = models.ImageField(upload_to='driver/', blank=True, null=True)
     licensePlateNumber = models.CharField(max_length=20, blank=True, null=True)
+    password = models.CharField(max_length=16)
 
 
 class Order(models.Model):
     # id 用车时间 起点 终点 订单状态 额外需求 备注 车型 费用 司机id 用户id 评价 打分 订单时间 接单时间 完成时间
-    transportTime = models.TimeField(blank=True, null=True)
+    transportTime = models.CharField(max_length=25, blank=True, null=True)
     start = models.CharField(max_length=100)
     startDetail = models.CharField(max_length=100)
     end = models.CharField(max_length=100)
@@ -57,6 +57,7 @@ class Order(models.Model):
     contactsName = models.CharField(max_length=11, blank=True)
     evaluation = models.CharField(max_length=300, blank=True, null=True)
     mark = models.IntegerField(blank=True, null=True)
-    orderTime = models.CharField(max_length=100, blank=True, null=True)
-    recevingTime = models.TimeField(blank=True, null=True)
-    finishTime = models.TimeField(blank=True, null=True)
+    orderTime = models.CharField(max_length=25, blank=True, null=True)
+    recevingTime = models.CharField(max_length=25, blank=True, null=True)
+    finishTime = models.CharField(max_length=25, blank=True, null=True)
+    serviceTime = models.CharField(max_length=25, blank=True, null=True)
