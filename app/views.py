@@ -38,6 +38,10 @@ def driverInfo(request):
 def orderEvaluation(request):
     return userServiec.orderEvaluation(request)
 
+@csrf_exempt
+def confirmedService(request):
+    return userServiec.confirmedService(request)
+
 
 # -----------------司机端---------------------
 def driverOrderList(request):
@@ -59,6 +63,10 @@ def driverLogin(request):
 @csrf_exempt
 def orderService(request):
     return driverServiec.orderService(request)
+
+@csrf_exempt
+def uploadDriverImg(request):
+    return driverServiec.uploadDriverImg(request)
 
 
 

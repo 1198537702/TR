@@ -10,19 +10,18 @@ class driverServiec:
     def login(request):
         phone = request.POST.get('tell', '')
         try:
-            driver = Driver.objects.get(tell=phone)
+            driver = Driver.objects.values().get(tell=phone)
         except ObjectDoesNotExist:
             msg = '用户不存在'
             response = JsonResponse({'msg': msg}, safe=False)
         else:
-            if driver.password != request.POST.get('pass'):
+            if driver['password'] != request.POST.get('pass'):
                 msg = '密码错误'
                 response = JsonResponse({'msg': msg}, safe=False)
 
             else:
-                driver.password = ''
-                msg = model_to_dict(driver)
-                response = JsonResponse({'msg': 'success', 'driver': msg}, safe=False)
+                driver['password'] = ''
+                response = JsonResponse({'msg': 'success', 'user': driver}, safe=False)
 
         return response
 
@@ -56,6 +55,26 @@ class driverServiec:
         m.id = request.POST.get('id')
         m.orderStatus = '已送达'
         m.save(update_fields=['serviceTime', 'orderStatus'])
+        return JsonResponse({'msg': 'success'})
+
+    @staticmethod
+    def uploadDriverImg(request):
+        m = Driver()
+        if(request.POST.get('type') == 'headPortrait'):
+            m.headPortrait = request.FILES['file']
+            m.id = request.POST['id']
+            m.save(update_fields=['headPortrait'])
+
+        elif(request.POST.get('type') == 'drivingLicence'):
+            m.drivingLicence = request.FILES['file']
+            m.id = request.POST['id']
+            m.save(update_fields=['drivingLicence'])
+
+        elif(request.POST.get('type') == 'driversLicence'):
+            m.driversLicence = request.FILES['file']
+            m.id = request.POST['id']
+            m.save(update_fields=['driversLicence'])
+
         return JsonResponse({'msg': 'success'})
 
 

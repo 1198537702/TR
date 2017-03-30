@@ -33,6 +33,7 @@ class Driver(models.Model):
     driversLicence = models.ImageField(upload_to='driver/', blank=True, null=True)
     licensePlateNumber = models.CharField(max_length=20, blank=True, null=True)
     password = models.CharField(max_length=16)
+    status = models.CharField(max_length=16, blank=True, null=True)
 
 
 class Order(models.Model):
@@ -50,7 +51,7 @@ class Order(models.Model):
     additionalDemand = models.CharField(max_length=50, blank=True, null=True)
     remarks = models.CharField(max_length=300, blank=True, null=True)
     vehicleType = models.CharField(max_length=30)
-    pay = models.IntegerField(blank=True)
+    pay = models.CharField(max_length=11, blank=True)
     driverId = models.CharField(max_length=11, blank=True, null=True)
     userId = models.CharField(max_length=11)
     contactsTell = models.CharField(max_length=11, blank=True)

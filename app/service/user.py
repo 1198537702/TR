@@ -73,6 +73,15 @@ class userServiec:
         return JsonResponse({'msg': 'success'})
 
 
+    @staticmethod
+    def confirmedService(request):
+        m = Order(finishTime=request.POST.get('finishTime'))
+        m.id = request.POST.get('id')
+        m.orderStatus = '已完成'
+        m.save(update_fields=['finishTime', 'orderStatus'])
+        return JsonResponse({'msg': 'success'})
+
+
 
 
 

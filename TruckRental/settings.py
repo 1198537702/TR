@@ -133,3 +133,7 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticFiles').replace('\\', '/')
 MEDIA_URL = '/staticFiles/'
+
+
+# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static').replace('\\', '/')
+
