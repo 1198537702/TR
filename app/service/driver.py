@@ -34,7 +34,7 @@ class driverServiec:
 
     @staticmethod
     def getOrderFinished(request):
-        orderList = Order.objects.filter(orderStatus='已完成', driverId=request.GET.get('driverId')).values()
+        orderList = Order.objects.filter(serviceTime__isnull=True, driverId=request.GET.get('driverId')).values()
         response = JsonResponse({'orderList': list(orderList)}, safe=False)
         return response
 
