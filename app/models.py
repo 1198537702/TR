@@ -38,7 +38,7 @@ class Driver(models.Model):
 
 class Order(models.Model):
     # id 用车时间 起点 终点 订单状态 额外需求 备注 车型 费用 司机id 用户id 评价 打分 订单时间 接单时间 完成时间
-    transportTime = models.CharField(max_length=25, blank=True, null=True)
+    transportTime = models.CharField(max_length=25, blank=True, null=True) CHARSET utf8
     start = models.CharField(max_length=100)
     startDetail = models.CharField(max_length=100)
     end = models.CharField(max_length=100)
@@ -62,3 +62,4 @@ class Order(models.Model):
     recevingTime = models.CharField(max_length=25, blank=True, null=True)
     finishTime = models.CharField(max_length=25, blank=True, null=True)
     serviceTime = models.CharField(max_length=25, blank=True, null=True)
+
